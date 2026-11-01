@@ -1,1 +1,43 @@
-0
+{
+  "host": "192.168.69.6",
+  "port": 13400,
+  "key": "52,18,62,198",
+  "actions": {
+    "toggle": [
+      {"do": "routing", "tester": 3712, "target": 768},
+      {"do": "send", "hex": "1003", "expect": "50"},
+      {"do": "send", "hex": "2701", "expect": "67"},
+      {"do": "seedkey"},
+      {"do": "send", "hex": "2702{K}", "expect": "67"},
+      {"do": "send", "hex": "3101030C", "expect": "71"},
+      {"do": "send", "hex": "1001"}
+    ],
+    "status": [
+      {"do": "routing", "tester": 3712, "target": 768},
+      {"do": "send", "hex": "1003", "expect": "50"},
+      {"do": "send", "hex": "2701", "expect": "67"},
+      {"do": "seedkey"},
+      {"do": "send", "hex": "2702{K}", "expect": "67"},
+      {"do": "send", "hex": "3103030C", "expect": "71", "read": "status"},
+      {"do": "send", "hex": "1001"}
+    ],
+    "usb_on": [
+      {"do": "routing", "tester": 3712, "target": 768},
+      {"do": "send", "hex": "1003", "expect": "50"},
+      {"do": "send", "hex": "2701", "expect": "67"},
+      {"do": "seedkey"},
+      {"do": "send", "hex": "2702{K}", "expect": "67"},
+      {"do": "send", "hex": "3101580001", "expect": "71"},
+      {"do": "send", "hex": "1001"}
+    ],
+    "usb_off": [
+      {"do": "routing", "tester": 3712, "target": 768},
+      {"do": "send", "hex": "1003", "expect": "50"},
+      {"do": "send", "hex": "2701", "expect": "67"},
+      {"do": "seedkey"},
+      {"do": "send", "hex": "2702{K}", "expect": "67"},
+      {"do": "send", "hex": "3101580000", "expect": "71"},
+      {"do": "send", "hex": "1001"}
+    ]
+  }
+}
